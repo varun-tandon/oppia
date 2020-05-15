@@ -206,7 +206,7 @@ class UserSettingsModel(base_models.BaseModel):
 
     @classmethod
     def get_new_id(cls, unused_entity_name):
-        """Gets a new id for an entity, based on its name.
+        """Gets a new id for an entity, based on its names.
 
         The returned id is guaranteed to be unique among all instances of this
         entity.

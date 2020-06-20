@@ -5284,7 +5284,7 @@ export = {
   "ENABLE_ACCOUNT_DELETION": false,
 
   // Used to disable account data export until it is fully implemented.
-  "ENABLE_ACCOUNT_EXPORT": false,
+  "ENABLE_ACCOUNT_EXPORT": true,
 
   // Maximum allowed length of a username.
   "MAX_USERNAME_LENGTH": 30,

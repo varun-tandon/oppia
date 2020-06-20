@@ -241,7 +241,415 @@
         </span>
       </div>
     </div>
-
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_stats_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_stats_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_settings_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_settings_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_subscriptions_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_subscriptions_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_skill_mastery_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_skill_mastery_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_contributions_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_contributions_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_exploration_user_data_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_exploration_user_data_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_completed_activities_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_completed_activities_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_incomplete_activities_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_incomplete_activities_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_user_last_playthrough_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_user_last_playthrough_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_learner_playlist_handler_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_learner_playlist_handler_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_task_entry_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_task_entry_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_topic_rights_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_topic_rights_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_collection_progress_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_collection_progress_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_story_progress_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_story_progress_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_feeedback_thread_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_feeedback_thread_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_feedback_thread_user_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_feedback_thread_user_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_feedback_message_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_feedback_message_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_collection_rights_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_collection_rights_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_general_suggestion_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_general_suggestion_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_exploration_rights_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_exploration_rights_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_general_feedback_email_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_general_feedback_email_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_general_voiceover_app_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_general_voiceover_app_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_user_contribution_scoring_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_user_contribution_scoring_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_user_community_rights_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_user_community_rights_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_collection_rights_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_collection_rights_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_collection_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_collection_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_skill_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_skill_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_subtopic_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_subtopic_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_topic_rights_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_topic_rights_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_topic_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_topic_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_question_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_question_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_config_property_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_config_property_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_exploration_rights_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_exploration_rights_sm_handler</span> 
+      </div> 
+    </div>
+    <hr ng-if="$ctrl.userCanExportAccount">  
+    <div ng-if="$ctrl.userCanExportAccount" role="form" class="form-group row"> 
+      <label class="col-lg-2 col-md-2 col-sm-2">Export Account</label> 
+      <div class="col-lg-10 col-md-10 col-sm-10"> 
+        <a href="/export_exploration_sm_handler"> 
+          <button type="button" class="btn btn-primary" title="Export account" ng-click="$ctrl.handleExportDataClick()"> 
+            Export account 
+          </button> 
+        </a> 
+        <span class="form-text" style="font-size: smaller">/export_exploration_sm_handler</span> 
+      </div> 
+    </div>
+    
   </md-card>
 </div>
 <style>

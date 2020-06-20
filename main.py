@@ -431,6 +431,74 @@ URLS = MAPREDUCE_HANDLERS + [
     get_redirect_route(
         feconf.EXPORT_ACCOUNT_HANDLER_URL, profile.ExportAccountHandler),
     get_redirect_route(
+        '/export_stats_handler', profile.ExportStatsHandler),
+    get_redirect_route(
+        '/export_settings_handler', profile.ExportSettingsHandler),
+    get_redirect_route(
+        '/export_subscriptions_handler', profile.ExportSubscriptionsHandler),
+    get_redirect_route(
+        '/export_skill_mastery_handler', profile.ExportSkillMasteryHandler),
+    get_redirect_route(
+        '/export_contributions_handler', profile.ExportContributionsHandler),
+    get_redirect_route(
+        '/export_exploration_user_data_handler', profile.ExportExplorationUserDataHandler),
+    get_redirect_route(
+        '/export_completed_activities_handler', profile.ExportCompletedActivitiesHandler),
+    get_redirect_route(
+        '/export_incomplete_activities_handler', profile.ExportIncompleteActivitiesHandler),
+    get_redirect_route(
+        '/export_user_last_playthrough_handler', profile.ExportUserLastPlaythroughHandler),
+    get_redirect_route(
+        '/export_learner_playlist_handler_handler', profile.ExportLearnerPlaylistHandler),
+    get_redirect_route(
+        '/export_task_entry_handler', profile.ExportTaskEntryHandler),
+    get_redirect_route(
+        '/export_topic_rights_handler', profile.ExportTopicRightsHandler),
+    get_redirect_route(
+        '/export_collection_progress_handler', profile.ExportCollectionProgressHandler),
+    get_redirect_route(
+        '/export_story_progress_handler', profile.ExportStoryProgressHandler),
+    get_redirect_route(
+        '/export_feeedback_thread_handler', profile.ExportFeedbackThreadHandler),
+    get_redirect_route(
+        '/export_feedback_thread_user_handler', profile.ExportFeedbackThreadUserHandler),
+    get_redirect_route(
+        '/export_feedback_message_handler', profile.ExportFeedbackMessageHandler),
+    get_redirect_route(
+        '/export_collection_rights_handler', profile.ExportCollectionRightsHandler),
+    get_redirect_route(
+        '/export_general_suggestion_handler', profile.ExportGeneralSuggestionHandler),
+    get_redirect_route(
+        '/export_exploration_rights_handler', profile.ExportExplorationRightsHandler),
+    get_redirect_route(
+        '/export_general_feedback_email_handler', profile.ExportGeneralFeedbackEmailHandler),
+    get_redirect_route(
+        '/export_general_voiceover_app_handler', profile.ExportGeneralVoiceoverAppHandler),
+    get_redirect_route(
+        '/export_user_contribution_scoring_handler', profile.ExportUserContributionScoringHandler),
+    get_redirect_route(
+        '/export_user_community_rights_handler', profile.ExportUserCommunityRightsHandler),
+    get_redirect_route(
+        '/export_collection_rights_sm_handler', profile.ExportCollectionRightsSnapshotMetaHandler),
+    get_redirect_route(
+        '/export_collection_sm_handler', profile.ExportCollectionSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_skill_sm_handler', profile.ExportSkillSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_subtopic_sm_handler', profile.ExportSubtopicSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_topic_rights_sm_handler', profile.ExportTopicRightsSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_topic_sm_handler', profile.ExportTopicSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_question_sm_handler', profile.ExportQuestionSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_config_property_sm_handler', profile.ExportConfigPropertySnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_exploration_rights_sm_handler', profile.ExportExplorationRightsSnapshotMetadataHandler),
+    get_redirect_route(
+        '/export_exploration_sm_handler', profile.ExportExplorationSnapshotMetadataHandler),
+    get_redirect_route(
         feconf.PENDING_ACCOUNT_DELETION_URL,
         profile.PendingAccountDeletionPage),
     get_redirect_route(

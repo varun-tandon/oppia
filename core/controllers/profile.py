@@ -34,7 +34,19 @@ import feconf
 import utils
 
 current_user_services = models.Registry.import_current_user_services()
-
+(
+    base_models, collection_models, config_models,
+    email_models, exploration_models, feedback_models,
+    improvements_models, question_models, skill_models,
+    story_models, suggestion_models, topic_models,
+    user_models,
+) = models.Registry.import_models([
+    models.NAMES.base_model, models.NAMES.collection, models.NAMES.config,
+    models.NAMES.email, models.NAMES.exploration, models.NAMES.feedback,
+    models.NAMES.improvements, models.NAMES.question, models.NAMES.skill,
+    models.NAMES.story, models.NAMES.suggestion, models.NAMES.topic,
+    models.NAMES.user,
+])
 
 class ProfilePage(base.BaseHandler):
     """The world-viewable profile page."""
@@ -369,6 +381,482 @@ class ExportAccountHandler(base.BaseHandler):
             raise self.PageNotFoundException
 
         user_data = takeout_service.export_data_for_user(self.user_id)
+        self.render_json(user_data)
+
+class ExportStatsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserStatsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportSettingsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserSettingsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportSubscriptionsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserSubscriptionsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportSkillMasteryHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserSkillMasteryModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportContributionsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserContributionsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportExplorationUserDataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.ExplorationUserDataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportCompletedActivitiesHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.CompletedActivitiesModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportIncompleteActivitiesHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.IncompleteActivitiesModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportUserLastPlaythroughHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.ExpUserLastPlaythroughModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportLearnerPlaylistHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.LearnerPlaylistModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportTaskEntryHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = improvements_models.TaskEntryModel.export_data(self.user_id) 
+        self.render_json(user_data)
+
+class ExportTopicRightsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = topic_models.TopicRightsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportCollectionProgressHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.CollectionProgressModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportStoryProgressHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.StoryProgressModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportFeedbackThreadHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = feedback_models.GeneralFeedbackThreadModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportFeedbackThreadUserHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = feedback_models.GeneralFeedbackThreadUserModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportFeedbackMessageHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = feedback_models.GeneralFeedbackMessageModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportCollectionRightsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = collection_models.CollectionRightsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportGeneralSuggestionHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = suggestion_models.GeneralSuggestionModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportExplorationRightsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = exploration_models.ExplorationRightsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportGeneralFeedbackEmailHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = email_models.GeneralFeedbackEmailReplyToIdModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportGeneralVoiceoverAppHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = suggestion_models.GeneralVoiceoverApplicationModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportUserContributionScoringHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserContributionScoringModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportUserCommunityRightsHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = user_models.UserCommunityRightsModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportCollectionRightsSnapshotMetaHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = collection_models.CollectionRightsSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportCollectionSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = collection_models.CollectionSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportSkillSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = skill_models.SkillSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportSubtopicSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = topic_models.SubtopicPageSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportTopicRightsSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = topic_models.TopicRightsSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+ 
+class ExportTopicSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = topic_models.TopicSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportQuestionSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = question_models.QuestionSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportConfigPropertySnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = config_models.ConfigPropertySnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportExplorationRightsSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = exploration_models.ExplorationRightsSnapshotMetadataModel.export_data(self.user_id)
+        self.render_json(user_data)
+
+class ExportExplorationSnapshotMetadataHandler(base.BaseHandler):
+    """Provides user with relevant data for Takeout."""
+
+    GET_HANDLER_ERROR_RETURN_TYPE = feconf.HANDLER_TYPE_JSON
+
+    @acl_decorators.can_manage_own_profile
+    def get(self):
+        """Handles GET requests."""
+        if not constants.ENABLE_ACCOUNT_EXPORT:
+            raise self.PageNotFoundException
+
+        user_data = exploration_models.ExplorationSnapshotMetadataModel.export_data(self.user_id)
         self.render_json(user_data)
 
 

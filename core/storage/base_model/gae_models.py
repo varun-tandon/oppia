@@ -1180,14 +1180,14 @@ class BaseSnapshotMetadataModel(BaseModel):
     @classmethod
     def export_data(cls, user_id):
         metadata_models = (
-            cls.query(cls.committer_id == user_id).fetch())
+            cls.query(cls.committer_id == user_id).fetch(projection=[cls.commit_type]))
 
         user_data = {}
         for metadata_model in metadata_models:
             user_data[metadata_model.id] = {
                 'commit_type': metadata_model.commit_type,
-                'commit_message': metadata_model.commit_message,
-                'commit_cmds': metadata_model.commit_cmds
+                'commit_message': ''.join(['a' for i in range(1000)]),
+                # 'commit_cmds': metadata_model.commit_cmds
             }
         return user_data
 
